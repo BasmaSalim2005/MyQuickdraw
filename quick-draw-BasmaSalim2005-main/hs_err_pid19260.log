@@ -1,0 +1,221 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 4194304 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3530), pid=19260, tid=21776
+#
+# JRE version:  (18.0.2+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (18.0.2+9-FR, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: org.jetbrains.kotlin.cli.jvm.K2JVMCompiler @C:\Users\basma\Downloads\quick-draw-BasmaSalim2005-main\quick-draw-BasmaSalim2005-main\build\20240830_13425978467278084367.compiler.options
+
+Host: Intel(R) Core(TM) i5-7300U CPU @ 2.60GHz, 4 cores, 15G,  Windows 11 , 64 bit Build 22621 (10.0.22621.3672)
+Time: Fri Aug 30 11:54:35 2024 Europe de l , 64 bit Build 22621 (10.0.22621.3672) elapsed time: 0.021555 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000133d8d4e620):  JavaThread "Unknown thread" [_thread_in_vm, id=21776, stack(0x0000001b10200000,0x0000001b10300000)]
+
+Stack: [0x0000001b10200000,0x0000001b10300000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x685a2a]
+V  [jvm.dll+0x82ae8d]
+V  [jvm.dll+0x82c75e]
+V  [jvm.dll+0x82ce03]
+V  [jvm.dll+0x25ef4b]
+V  [jvm.dll+0x6828ca]
+V  [jvm.dll+0x67745a]
+V  [jvm.dll+0x3243f9]
+V  [jvm.dll+0x32ba86]
+V  [jvm.dll+0x37e036]
+V  [jvm.dll+0x37e24f]
+V  [jvm.dll+0x2fb50a]
+V  [jvm.dll+0x2fc581]
+V  [jvm.dll+0x7fb300]
+V  [jvm.dll+0x38af71]
+V  [jvm.dll+0x7dab95]
+V  [jvm.dll+0x4058f3]
+V  [jvm.dll+0x4072b1]
+C  [jli.dll+0x519f]
+C  [ucrtbase.dll+0x29333]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5af28]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffc7aef9610, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000133d8dc0c90 WorkerThread "GC Thread#0" [stack: 0x0000001b10300000,0x0000001b10400000] [id=4664]
+  0x00000133d8dd19d0 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000001b10400000,0x0000001b10500000] [id=22888]
+  0x00000133d8dd23c0 WorkerThread "G1 Conc#0" [stack: 0x0000001b10500000,0x0000001b10600000] [id=20228]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffc7a6cc5c7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000133d8d4b940] Heap_lock - owner thread: 0x00000133d8d4e620
+
+Heap address: 0x0000000701e00000, size: 4066 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000701e00000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffc7aa9d5a9]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.013 Loaded shared library C:\Users\basma\.jdks\corretto-18.0.2\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff7f1d60000 - 0x00007ff7f1d6d000 	C:\Users\basma\.jdks\corretto-18.0.2\bin\java.exe
+0x00007ffd0f330000 - 0x00007ffd0f547000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffd0e450000 - 0x00007ffd0e514000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffd0c8a0000 - 0x00007ffd0cc4d000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffd0c780000 - 0x00007ffd0c891000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffcfe150000 - 0x00007ffcfe167000 	C:\Users\basma\.jdks\corretto-18.0.2\bin\jli.dll
+0x00007ffcf11a0000 - 0x00007ffcf11b5000 	C:\Users\basma\.jdks\corretto-18.0.2\bin\VCRUNTIME140.dll
+0x00007ffd0d290000 - 0x00007ffd0d43e000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffd0d040000 - 0x00007ffd0d066000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffd0ded0000 - 0x00007ffd0def9000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffcf5ad0000 - 0x00007ffcf5d63000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955\COMCTL32.dll
+0x00007ffd0c660000 - 0x00007ffd0c779000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffd0ceb0000 - 0x00007ffd0cf4a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffd0de20000 - 0x00007ffd0dec7000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffd0dbf0000 - 0x00007ffd0dc21000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffcd7180000 - 0x00007ffcd721b000 	C:\Users\basma\.jdks\corretto-18.0.2\bin\msvcp140.dll
+0x00007ffc7a3c0000 - 0x00007ffc7b031000 	C:\Users\basma\.jdks\corretto-18.0.2\bin\server\jvm.dll
+0x00007ffd0e520000 - 0x00007ffd0e5d2000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffd0d960000 - 0x00007ffd0da09000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffd0cf50000 - 0x00007ffd0cf78000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ffd0d170000 - 0x00007ffd0d284000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffd0dca0000 - 0x00007ffd0dca8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffcd5250000 - 0x00007ffcd5259000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffd01c30000 - 0x00007ffd01c64000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffd0f110000 - 0x00007ffd0f181000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffd01210000 - 0x00007ffd0121a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffd0b650000 - 0x00007ffd0b668000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffd06230000 - 0x00007ffd0623a000 	C:\Users\basma\.jdks\corretto-18.0.2\bin\jimage.dll
+0x00007ffd06ef0000 - 0x00007ffd07122000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffd0df00000 - 0x00007ffd0e288000 	C:\WINDOWS\System32\combase.dll
+0x00007ffd0ee40000 - 0x00007ffd0ef17000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffcf25d0000 - 0x00007ffcf2602000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffd0ce30000 - 0x00007ffd0ceab000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffcebc40000 - 0x00007ffcebc65000 	C:\Users\basma\.jdks\corretto-18.0.2\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\basma\.jdks\corretto-18.0.2\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.3672_none_2713b9d173822955;C:\Users\basma\.jdks\corretto-18.0.2\bin\server
+
+VM Arguments:
+java_command: org.jetbrains.kotlin.cli.jvm.K2JVMCompiler @C:\Users\basma\Downloads\quick-draw-BasmaSalim2005-main\quick-draw-BasmaSalim2005-main\build\20240830_13425978467278084367.compiler.options
+java_class_path (initial): C:\Users\basma\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-compiler-embeddable\1.9.20\b44d2f7d8c1c67c0ed66d40e57e52623ca753db7\kotlin-compiler-embeddable-1.9.20.jar;C:\Users\basma\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.9.20\e58b4816ac517e9cc5df1db051120c63d4cde669\kotlin-stdlib-1.9.20.jar;C:\Users\basma\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-script-runtime\1.9.20\6fdfef711b8e07f1a4d0979a60acd7bc8a800777\kotlin-script-runtime-1.9.20.jar;C:\Users\basma\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-reflect\1.6.10\1cbe9c92c12a94eea200d23c2bbaedaf3daf5132\kotlin-reflect-1.6.10.jar;C:\Users\basma\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-daemon-embeddable\1.9.20\a2a6b491bc53049e2f1af33245481db49034ba52\kotlin-daemon-embeddable-1.9.20.jar;C:\Users\basma\.gradle\caches\modules-2\files-2.1\org.jetbrains.intellij.deps\trove4j\1.0.20200330\3afb14d5f9ceb459d724e907a21145e8ff394f02\trove4j-1.0.20200330.jar;C:\Users\basma\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 268435456                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4263510016                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4263510016                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-17
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Java\jre-1.8\bin;C:\Users\basma\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\basma\AppData\Local\Programs\Python\Python312\;C:\Users\basma\AppData\Local\Programs\Python\Launcher\;C:\Users\basma\AppData\Local\Microsoft\WindowsApps;C:\Users\basma\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;C:\Users\basma\AppData\Local\JetBrains\Toolbox\scripts;C:\msys64\ucrt64\bin;
+USERNAME=basma
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.3672)
+OS uptime: 21 days 23:23 hours
+Hyper-V role detected
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 142 stepping 9 microcode 0xf4, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, rtm, adx, fma, vzeroupper, clflush, clflushopt, hv
+
+Memory: 4k page, system-wide physical 16259M (514M free)
+TotalPageFile size 47678M (AvailPageFile size 7M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 312M, peak: 316M
+
+vm_info: OpenJDK 64-Bit Server VM (18.0.2+9-FR) for windows-amd64 JRE (18.0.2+9-FR), built on Jul 15 2022 20:03:03 by "Administrator" with MS VC++ 15.9 (VS2017)
+
+END.

@@ -1,0 +1,27 @@
+[versions]
+kotlin = "1.8.10"
+detekt = "1.22.0"
+jdk = "17"
+jvm = "1.9.20"
+mosaic = "0.10.0"
+jline = "3.25.1"
+test-exit = "1.1.2"
+junit-params = "5.10.0"
+mockito = "1.13.12"
+
+
+[libraries]
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+mosaic = { module = "com.jakewharton.mosaic:mosaic-gradle-plugin", version.ref = "mosaic" }
+kotlin-std = { module = "org.jetbrains.kotlin:kotlin-stdlib" }
+jline = { module = "org.jline:jline", version.ref = "jline" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test" }
+kotlin-test-exit = {module = "com.ginsberg:junit5-system-exit", version.ref = "test-exit"}
+junit-params = {module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit-params"}
+mockito = {module = "io.mockk:mockk", version.ref = "mockito"}
+
+
+[plugins]
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+mosaic = { id = "com.jakewharton.mosaic", version.ref = "mosaic" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
