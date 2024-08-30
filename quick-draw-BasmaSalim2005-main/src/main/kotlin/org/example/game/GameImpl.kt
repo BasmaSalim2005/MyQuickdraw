@@ -33,7 +33,7 @@ class GameImpl : Game() {
     }
     
     fun updateState(currentTime: Long) {
-        println(gameState)
+//        println(gameState)
         if (gameState == GameState.WAIT && currentTime - waitingStart >= waitingTime) {
             gameState = GameState.FIRE
             batch = Resources.FIRE
